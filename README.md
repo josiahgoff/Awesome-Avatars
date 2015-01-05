@@ -19,6 +19,8 @@ testing environment in a few easy steps:
    ```bash
    git clone --recursive git@github.com:Chassis/Chassis.git awesome-avatars-tester
    ```
+   
+   If you're getting a `permission denied` error, it probably means you need to set up your [GitHub SSH Key](https://help.github.com/articles/generating-ssh-keys/).
 
 3. Grab a copy of Awesome Avatars:
 
