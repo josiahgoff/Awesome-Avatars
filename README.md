@@ -28,7 +28,7 @@ testing environment in a few easy steps:
    cd awesome-avatars-tester
    mkdir -p content/plugins content/themes
    cp -r wp/wp-content/themes/* content/themes
-   git clone git@github.com:josiahgoff/awesome-avatars.git content/plugins/awesome-avatars
+   git clone git@github.com:josiahgoff/awesome-avatars.git awesome-avatars
    ```
 
 4. Start the virtual machine:
@@ -37,10 +37,10 @@ testing environment in a few easy steps:
    vagrant up
    ```
 
-5. Activate the plugin:
+5. Create a symlink and activate the plugin:
 
    ```bash
-   vagrant ssh -c 'cd /vagrant && wp plugin activate awesome-avatars'
+   vagrant ssh -c 'cd /vagrant && ln -s /vagrant/awesome-avatars/trunk /vagrant/content/plugins/awesome-avatars && wp plugin activate awesome-avatars'
    ```
 
 6. Sign up at [Avatars.io](http://avatars.io) for free to get your API credentials and input them through the dashboard settings panel.
