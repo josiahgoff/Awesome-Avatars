@@ -10,18 +10,18 @@
  *
  * @link              http://example.com
  * @since             1.0.0
- * @package           Plugin_Name
+ * @package           Awesome_Avatars
  *
  * @wordpress-plugin
- * Plugin Name:       WordPress Plugin Boilerplate
- * Plugin URI:        http://example.com/plugin-name-uri/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress dashboard.
+ * Plugin Name:       Awesome Avatars
+ * Plugin URI:        http://github.com/josiahgoff/Awesome-Avatars
+ * Description:       Awesome Avatars is the most awesome avatars plugin for WordPress! It allows users to upload their own avatars or use avatars from their social networks (using Avatars.io).
  * Version:           1.0.0
- * Author:            Your Name or Your Company
- * Author URI:        http://example.com/
+ * Author:            Josiah Goff
+ * Author URI:        http://josiahgoff.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       plugin-name
+ * Text Domain:       awesome-avatars
  * Domain Path:       /languages
  */
 
@@ -32,20 +32,20 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-plugin-name-activator.php
+ * This action is documented in includes/class-awesome-avatars-activator.php
  */
 function activate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-activator.php';
-	Plugin_Name_Activator::activate();
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-awesome-avatars-activator.php';
+	Awesome_Avatars_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-plugin-name-deactivator.php
+ * This action is documented in includes/class-awesome-avatars-deactivator.php
  */
 function deactivate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-deactivator.php';
-	Plugin_Name_Deactivator::deactivate();
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-awesome-avatars-deactivator.php';
+	Awesome_Avatars_Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_plugin_name' );
@@ -55,7 +55,7 @@ register_deactivation_hook( __FILE__, 'deactivate_plugin_name' );
  * The core plugin class that is used to define internationalization,
  * dashboard-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-awesome-avatars.php';
 
 /**
  * Begins execution of the plugin.
@@ -68,7 +68,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
  */
 function run_plugin_name() {
 
-	$plugin = new Plugin_Name();
+	$plugin = new Awesome_Avatars();
 	$plugin->run();
 
 }
