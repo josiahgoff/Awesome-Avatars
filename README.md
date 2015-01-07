@@ -56,7 +56,7 @@ in with the credentials below:
    Password: password
    ```
 
-### Testing
+<!-- ### Testing
 
 For testing, you'll need a little bit more:
 
@@ -86,7 +86,7 @@ For testing, you'll need a little bit more:
 
    ```bash
    vagrant ssh -c 'cd /vagrant/content/plugins/awesome-avatars && phpunit'
-   ```
+   ``` -->
 
 
 ## Issue Tracking
