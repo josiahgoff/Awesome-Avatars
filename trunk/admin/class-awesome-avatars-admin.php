@@ -52,8 +52,6 @@ class Awesome_Avatars_Admin {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
-		// Add settings page
-		add_action('admin_menu', array( $this, 'add_settings_page' ) );
 	}
 
 	/**
