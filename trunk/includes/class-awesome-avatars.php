@@ -154,6 +154,15 @@ class Awesome_Avatars {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		
+		// Add user meta fields
+		$this->loader->add_action( 'edit_user_profile',  $plugin_admin, 'add_user_meta_fields' );
+		$this->loader->add_action( 'show_user_profile',  $plugin_admin, 'add_user_meta_fields' );
+		
+		// Save user meta fields
+		$this->loader->add_action( 'personal_options_update',  $plugin_admin, 'save_user_meta_fields' );
+		$this->loader->add_action( 'edit_user_profile_update',  $plugin_admin, 'save_user_meta_fields' );
+		
 
 	}
 

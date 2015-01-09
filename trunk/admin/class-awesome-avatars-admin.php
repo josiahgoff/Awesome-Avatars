@@ -99,5 +99,28 @@ class Awesome_Avatars_Admin {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/awesome-avatars-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
+	
+	/**
+	 * Display custom user meta
+	 */
+	public function add_user_meta_fields( ) {
+		
+		include( 'partials/add_user_meta_fields.php' );
+		
+	}
+	
+	/**
+	 * Save custom user meta fields
+	 */
+	public function save_user_meta_fields( $user_id ) {
+		
+		if ( !current_user_can( 'edit_user', $user_id ) )
+		return false;
+
+		update_usermeta( $user_id, 'twitter', $_POST['twitter'] );
+		update_usermeta( $user_id, 'facebook', $_POST['facebook'] );
+		update_usermeta( $user_id, 'instagram', $_POST['instagram'] );
+		
+	}
 
 }
