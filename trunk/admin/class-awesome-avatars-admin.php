@@ -107,7 +107,12 @@ class Awesome_Avatars_Admin {
 	 */
 	public function add_settings_page() {
 
-		add_options_page( 'Awesome Avatars', 'Avatars', 'manage_options', 'awesome-avatars', array($this, 'display_settings_page') );
+		add_options_page(
+			__( 'Awesome Avatars Settings', $this->plugin_name ),
+			__( 'Avatars', $this->plugin_name ),
+			'manage_options',
+			'awesome-avatars',
+			array($this, 'display_settings_page') );
 
 	}
 
@@ -117,7 +122,7 @@ class Awesome_Avatars_Admin {
 	public function display_settings_page() {
 
 		include('partials/awesome-avatars-admin-display.php');
-		
+
 	}
 
 }
