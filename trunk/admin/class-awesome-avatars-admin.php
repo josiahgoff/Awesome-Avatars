@@ -123,4 +123,51 @@ class Awesome_Avatars_Admin {
 
 	}
 
+	/**
+	 * Set tokens.
+	 * 
+	 * @param array $tokens Associative array token_type => token
+	 */
+	public function set_tokens( $tokens ) {
+
+		return update_option( 'avatars_tokens', $tokens );
+
+	}
+
+	/**
+	 * Get tokens.
+	 * 
+	 * @return array Associative array token_type => token
+	 */
+	public function get_tokens() {
+
+		$default = array(
+			'public'  => '',
+			'private' => '',
+		);
+
+		return get_option( 'avatars_tokens', $default );
+		
+	}
+
+	/**
+	 * Whether users has valid tokens
+	 * 
+	 * @return bool True if valid. False if not.
+	 */
+	public function has_valid_tokens() {
+
+		$valid = true;
+		$tokens = $this->get_tokens();
+
+		foreach ($tokens as $key => $value) {
+			if ( empty( $value ) ) {
+				$valid = false;
+			}
+		}
+
+		return $valid;
+
+	}
+
 }
