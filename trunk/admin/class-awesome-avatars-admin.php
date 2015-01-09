@@ -52,6 +52,8 @@ class Awesome_Avatars_Admin {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
+		// Add settings page
+		add_action('admin_menu', array( $this, 'add_settings_page' ) );
 	}
 
 	/**
@@ -98,6 +100,24 @@ class Awesome_Avatars_Admin {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/awesome-avatars-admin.js', array( 'jquery' ), $this->version, false );
 
+	}
+
+	/**
+	 * Add settings page.
+	 */
+	public function add_settings_page() {
+
+		add_options_page( 'Awesome Avatars', 'Avatars', 'manage_options', 'awesome-avatars', array($this, 'display_settings_page') );
+
+	}
+
+	/**
+	 * Display settings page
+	 */
+	public function display_settings_page() {
+
+		include('partials/awesome-avatars-admin-display.php');
+		
 	}
 
 }
