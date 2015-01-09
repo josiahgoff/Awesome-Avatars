@@ -44,11 +44,11 @@ $plugin_admin->set_tokens( $tokens );
 		<ul>
 			<li>
 				<label for="public-token">Public Token</label>
-				<input id="public-token" type="text" name="public_token" value="<?php echo $tokens['public']; ?>">
+				<textarea id="public-token" type="text" name="public_token"><?php echo $tokens['public']; ?></textarea>
 			</li>
 			<li>
 				<label for="private-token">Private Token</label>
-				<input id="private-token" type="text" name="private_token" value="<?php echo $tokens['private']; ?>">
+				<textarea id="private-token" type="text" name="private_token"><?php echo $tokens['private']; ?></textarea>
 			</li>
 		</ul>
 		<input type="submit" name="tokens" value="Save" class="button button-primary">
